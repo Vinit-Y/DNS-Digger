@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the page -->
+    <title>Validation</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <!-- Main heading of the page -->
+    <h1>DNS Digger - Validation</h1>
+    <!-- Form for user input and validation -->
+    <form action="/validate" method="POST">
+        <!-- Label for input field -->
+        <label for="inputData">Enter IP/Domain/Whois/Email:</label>
+        <!-- Input field to enter data, with a default value if provided -->
+        <input type="text" id="inputData" name="inputData" value="<%= locals.inputData %>" required>
+        <!-- Button to submit the form for validation -->
+        <button type="submit">Validate</button>
+    </form>
+
+    <!-- Display response if available -->
+    <% if (locals.responseData) { %>
+        <p><%= locals.responseData %></p>
+    <% } %>
+</body>
+</html>
